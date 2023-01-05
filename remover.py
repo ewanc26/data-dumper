@@ -1,6 +1,6 @@
 import os
 import platform
-import win32api
+import win32api  # type: ignore
 
 if platform.system() == "Windows":
     release = platform.release()
@@ -41,6 +41,6 @@ for drive in drive_list:
                 except win32api.error as e:
                     pass
             elif not os.path.exists(file_path):
-                pass
+                print(f"no file in {root}")
     else:
         pass
