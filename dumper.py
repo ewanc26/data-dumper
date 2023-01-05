@@ -1,7 +1,7 @@
 import random
 import os
 import platform
-import win32api
+import win32api  # type: ignore
 import string
 
 if platform.system() == "Windows":
