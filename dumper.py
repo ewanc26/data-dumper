@@ -22,7 +22,6 @@ elif platform.system() == "Darwin":
     quit()
 
 valid_chars = string.printable
-root = os.path.dirname(os.path.realpath(__file__))
 get_drives = win32api.GetLogicalDriveStrings()
 list_of_drives = get_drives.split("\x00")
 drive_list = []
