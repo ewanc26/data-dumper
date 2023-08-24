@@ -19,7 +19,7 @@ elif platform.system() == "Darwin":
     print(f"macOS {release} not supported.")
     quit()
 
-root = os.path.dirname(os.path.realpath(__file__))
+src = os.path.dirname(os.path.realpath(__file__))
 get_drives = win32api.GetLogicalDriveStrings()
 list_of_drives = get_drives.split("\x00")
 drive_list = []
@@ -32,8 +32,8 @@ for drive in list_of_drives:
 
 for drive in drive_list:
     if os.path.isdir(drive):
-        for root, dirs, files in os.walk(drive):
-            file_path = os.path.join(root, f"payload.txt")
+        for src, dirs, files in os.walk(drive):
+            file_path = os.path.join(src, f"payload.txt")
             if os.path.exists(file_path):
                 try:
                     win32api.DeleteFile(file_path)
@@ -41,6 +41,6 @@ for drive in drive_list:
                 except win32api.error as e:
                     pass
             elif not os.path.exists(file_path):
-                print(f"no file in {root}")
+                print(f"no file in {src}")
     else:
         pass

