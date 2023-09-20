@@ -40,7 +40,7 @@ for drive in drive_list:
     payload = "".join(random.choices(valid_chars, k=random.randint(1, 1024)))
     # Determine the number of payloads to create (1 to 5)
     payload_amount = random.randint(1, 5)
-    
+
     # Check if the drive is a directory
     if os.path.isdir(drive):
         # Recursively walk through the directory and its subdirectories

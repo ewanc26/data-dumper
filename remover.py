@@ -40,7 +40,7 @@ for drive in drive_list:
         for src, dirs, files in os.walk(drive):
             # Create a file path for the "payload.txt" file in the current directory
             file_path = os.path.join(src, f"payload.txt")
-            
+
             # Check if the file exists
             if os.path.exists(file_path):
                 try:
